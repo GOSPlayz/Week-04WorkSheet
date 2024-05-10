@@ -217,6 +217,15 @@ public class Week04WorkSheet {
 	// |||SEVENTH METHOD (My own custom one) takes in hours worked, hourly wage, state tax, and federal tax then returns your taxed income based off the default values for SS and medical and asks.
 	public static double taxedIncome(double hours, double DPH, double state, double federal) {
 			double gross = hours * DPH, sS = .062, medical = .0145, sSTax = 0, medicalTax = 0, taxedIncome = 0, federalTax = 0, stateTax = 0;
+			if (state >= 1.00) {
+				state = state / 100;
+				System.out.println(state);
+			}
+			if (federal >= 1.00) {
+				federal = federal / 100;
+				System.out.println(federal);
+			}
+			
 			
 			sSTax = gross * sS;
 			
@@ -224,7 +233,7 @@ public class Week04WorkSheet {
 			
 			federalTax = gross * federal;
 			
-			federalTax = gross * state;
+			stateTax = gross * state;
 			taxedIncome = gross - medicalTax - federalTax - sSTax - stateTax;
 			
 			
@@ -242,7 +251,7 @@ public class Week04WorkSheet {
 
 
 
-	// |||FIFTH METHOD gets average of two double arrays and check to see if the first one is larger
+	// |||FIFTH METHOD||| gets average of two double arrays and check to see if the first one is larger
 	public static boolean firstArrayAvarageIsGreater(double[] a, double[] b) {
 			double totalSum = 0;
 			double totalSum2 = 0;
